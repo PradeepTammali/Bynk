@@ -1,4 +1,4 @@
-This is simple and basic approch where it combines the data in different formats to single csv file. It loads the data direclty form the URLs to dataframes. We find the correlation between the different datasets and merge them together based on the column with dependecy in both dataframes. 
+This is simple and basic approach where it combines the data in different formats to single csv file. It loads the data direclty form the URLs to dataframes. We find the correlation between the different datasets and merge them together based on the column with dependecy in both dataframes. 
 
 # Prerequisites
 Python 3.7
