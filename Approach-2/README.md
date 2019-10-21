@@ -1,3 +1,4 @@
+# Bynk Data Pipeline
 This is template for building a pipe line for the bulk and streaming data loading, processing data and merging data. 
 
 In this pipe line we have three different phases.
@@ -11,7 +12,7 @@ The total data flow pipe line looks as below.
 
 # 1. Data Collection and Preparation
 
-  # Prerequisites
+  ### Prerequisites
   A kafka cluster for the Kafka Rest Proxy serivice to push recieved data into topics.
   
   In this phase, Kafka Rest Proxy service collect data from different URLs or sources and push it different topics. On the other end, Spark service will read the data from the topics and process them. Kafka Rest Proxy is a simple web micro service which batch loads the data from URLs specified in the config file and push them into according Kafka topics.
@@ -26,11 +27,29 @@ A user interface service can be deployed to send the data to Kafka Rest Proxy se
 
 # 2. Data Processing
 
-  # Prerequisites
+  ### Prerequisites
   A Spark cluster for the Spark Service to process the recieved data.
   
   In this phase, Spark service read the data from topics and process it. This service is written in PySpark. We can make use vast libraries of the both Spark and Python to simplify the processing of data. Data read from topics are merged together based on common column between two dataframes. The data is left joined to provide information about each loan. 
   
   <img src=docs/Data%20Processing.PNG width="300">
   
-  Some of the duplicate column names are renamed and null values are filled with 0. After merging the dataframes, the data can be saved in either on to local storage or to a database. Spark will give us various libraries to storage data on to different storage systems like cassandra, mongodb, hive, etc.
+  Some of the duplicate column names are renamed and null values are filled with 0. After merging the dataframes, the data can be saved in either on to local storage or to a database. Spark will give us various libraries to store data on to different storage systems like cassandra, mongodb, hive, etc.
+ 
+ 
+# 3. Data interpretation
+  
+  ### Prerequisites
+  The storage cluster where you want to store the data
+  
+  The final data set after the processing will be available in storage systems chosen. If it is a local storage system  then final data set is available in .csv format. If we chose to storage the data in any database, it would be easy to visualize the data and perform operations whenever needed. 
+
+<img src=docs/Storage.PNG width="300">
+
+# User Interface
+
+This service is can be used to send data to Kafka Rest Proxy service to make use of the stream processing of data. This service has a simple webpage to upload different types of file formats like csv, json, excel, etc... and convert them into json and send the data to Kafka Rest Proxy service. 
+
+#### Note: This approach might not support the current use case. 
+
+Note: This approach can be simply done in [Pentaho](https://www.hitachivantara.com/en-us/products/data-management-analytics/pentaho-platform/pentaho-data-integration.html) as well which provides GUI based implementation to create flows and data pipelines. 
