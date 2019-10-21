@@ -6,7 +6,7 @@ In this pipe line we have three different phases.
 3. Data interpretation
 
 The total data flow pipe line looks as below.
-
+![Architecture](docs/bynk-data-pipeline.PNG)
 
 
 # 1. Data collection and preparation
