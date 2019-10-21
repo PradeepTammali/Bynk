@@ -1,4 +1,4 @@
-This is simple and basic approach where it combines the data in different formats to single csv file. It loads the data direclty form the URLs to dataframes. We find the correlation between the different datasets and merge them together based on the column with dependecy in both dataframes. 
+This is simple and basic approach where it combines the data in different formats to single csv file. It loads the data directly form the URLs to data frames. We find the correlation between the different datasets and merge them together based on the column with dependency in both data frames. 
 
 # Prerequisites
 Python 3.7
@@ -11,5 +11,3 @@ python3.7 -n pip install -r requirements.txt
 python3.7 merge_files.py
 ```
 After the script is executed successfully, you will find a file `merged_data.csv` which contains the merged data of loans, customers and visits.
-
-
