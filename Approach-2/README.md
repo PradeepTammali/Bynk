@@ -16,6 +16,7 @@ The total data flow pipe line looks as below.
   
   In this phase, Kafka Rest Proxy service collect data from different URLs or sources and push it different topics. On the other end, Spark service will read the data from the topics and process them. Kafka Rest Proxy is a simple web micro service which batch loads the data from URLs specified in the config file and push them into according Kafka topics.
   
+ ![Architecture](docs/restproxy_config.PNG)
   
   Kafka Rest Proxy service can also work with streaming data. Whenever, Kafka Rest Proxy service receives data from REST end points it cleans, prepares and push the data to according topic. Futher, Spark Service will process the data. 
 
