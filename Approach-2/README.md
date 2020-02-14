@@ -1,4 +1,4 @@
-# Bynk Data Pipeline
+# Data Pipeline
 This is template for building a pipe line for the bulk and streaming data loading, processing data and merging data. 
 
 In this pipe line we have three different phases.
