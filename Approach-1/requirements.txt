@@ -8,7 +8,7 @@ pygobject==3.20.0
 python-apt==1.1.0b1+ubuntu0.16.4.5
 python-dateutil==2.8.0
 pytz==2019.3
-requests==2.22.0
+requests==2.31.0
 six==1.12.0
 unattended-upgrades==0.1
 urllib3==1.25.6
